@@ -136,3 +136,11 @@ $(function() {
 
     });
 }());
+
+//Resources Used
+
+// Starter Code from Udacity Front-End Nanodegree -https://github.com/udacity/frontend-nanodegree-feedreader)
+// Matthew Cranford's Tutorial Part 1 -https://matthewcranford.com/feed-reader-walkthrough-part-1-starter-code/)
+// Matthew Cranford's Tutorial Part 2 - https://matthewcranford.com/feed-reader-walkthrough-part-2-writing-the-first-tests/)
+// Matthew Cranford's Tutorial Part 3 - https://matthewcranford.com/feed-reader-walkthrough-part-3-menu-test-suite/)
+// Matthew Cranford's Tutorial Part 4 - https://matthewcranford.com/feed-reader-walkthrough-part-4-async-tests/)
