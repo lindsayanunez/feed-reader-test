@@ -77,11 +77,18 @@ $(function () {
          * clicked and does it hide when clicked again.
          */
 
-        it('menu toggles', function () {
+        it('menu toggles open', function () {
             const body = document.querySelector('body');
             const menu = document.querySelector('.menu-icon-link');
             menu.click();
             expect(body.classList.contains('menu-hidden')).toBe(false);
+        })
+
+        it('menu toggles closed', function () {
+        const body = document.querySelector('body');
+        const menu = document.querySelector('.menu-icon-link');
+        menu.click();
+        expect(body.classList.contains('menu-hidden')).toBe(true);
         })
 
     });
@@ -101,39 +108,39 @@ $(function () {
         });
 
         it('completes work', function () {
-            const feed = document.querySelector('.feed');
-            expect(feed.children.length > 0).toBe(true);
-        });
-
-        /* TODO: Write a new test suite named "New Feed Selection" */
-
-        describe('New Feed Selection', function () {
-            /* TODO: Write a test that ensures when a new feed is loaded
-             * by the loadFeed function that the content actually changes.
-             * Remember, loadFeed() is asynchronous.
-             */
-
-            const feed = document.querySelector('.feed');
-            const firstFeed = [];
-
-            beforeEach(function (done) {
-                loadFeed(0);
-                Array.from(feed.children).forEach(function (entry) {
-                    firstFeed.push(entry.innerText);
-                });
-                loadFeed(1, done);
-            });
-
-            it('content updates', function () {
-                Array.from(feed.children).forEach(function (entry, index) {
-                    expect(entry.innerText === firstFeed[index]).toBe(false);
-                });
-
-            });
-
+            const entry = $('.feed .entry');
+            expect(entry.length > 0).toBe(true);
         });
 
 
+
+
+    describe('New Feed Selection', function(){
+        let urlOne,
+            nameOne,
+            urlTwo,
+            nameTwo;
+
+        beforeEach(function(done){
+            loadFeed(0, function(){
+                nameOne = allFeeds[0].name;
+                urlOne = allFeeds[0].url;
+                loadFeed(1, function(){
+                   nameTwo = allFeeds[1].name;
+                   urlTwo = allFeeds[1].url;
+                });
+                done();
+            });
+        });
+
+        //After a new feed is loaded, this compares the updated names and urls to the original names and urls to ensure it is not duplicate.
+
+         it('content appears when loaded', function(){
+            expect(nameTwo).not.toEqual(nameOne);
+            expect(urlTwo).not.toEqual(urlOne);
+         });
+
+        });
     });
 }());
 
