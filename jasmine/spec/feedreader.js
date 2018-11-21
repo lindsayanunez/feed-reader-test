@@ -58,13 +58,8 @@ $(function () {
             const menu = document.querySelector('.menu-icon-link');
             menu.click();
             expect(body.classList.contains('menu-hidden')).toBe(false);
-        })
-
-        it('menu toggles closed', function () {
-        const body = document.querySelector('body');
-        const menu = document.querySelector('.menu-icon-link');
-        menu.click();
-        expect(body.classList.contains('menu-hidden')).toBe(true);
+            menu.click();
+            expect(body.classList.contains('menu-hidden')).toBe(true);
         })
 
     });
@@ -86,28 +81,28 @@ $(function () {
     //This tests new entries in allFeeds. After the initial feed is loaded  and a new post is added, it checks to make sure the content is updated.
 
     describe('New Feed Selection', function(){
-        let urlOne,
-            nameOne,
-            urlTwo,
-            nameTwo;
+        // let urlOne,
+        //     nameOne,
+        //     urlTwo,
+        //     nameTwo;
+
+        let feedOne,
+            feedTwo;
 
         beforeEach(function(done){
             loadFeed(0, function(){
-                nameOne = allFeeds[0].name;
-                urlOne = allFeeds[0].url;
-                loadFeed(1, function(){
-                   nameTwo = allFeeds[1].name;
-                   urlTwo = allFeeds[1].url;
-                });
+                feedOne = $('.feed').html();
+            loadFeed(1, function(){
+                feedTwo = $('.feed').html();
                 done();
+                });
             });
         });
 
         //After a new feed is loaded, this compares the updated names and urls to the original names and urls to ensure it is not duplicate.
 
          it('content appears when loaded', function(){
-            expect(nameTwo).not.toEqual(nameOne);
-            expect(urlTwo).not.toEqual(urlOne);
+            expect(feedTwo).not.toBe(feedOne);
          });
 
         });
