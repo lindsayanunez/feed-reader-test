@@ -1,20 +1,18 @@
-# Feed Reader Testing
+# Front-end Web Developer Nanodegree Project #4
 
-An excercise to test existing code.
+### Feed Reader - Test Driven Development
 
-# Project Overview
+## Description
 
-In this project we were given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, they've already included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and we're now left with an application with an incomplete test suite.
+In this project, [Jasmine](http://jasmine.github.io/) was used to write tests for a web-based application that reads RSS feeds.
 
-### How to Run
+#### Note: starter code was provided. See commits for my work.
 
-*Download the files and run the index.html file in the browser of your choice.
+## How to Access the Tests
+
+ - You can see the tests by navigating to the Jasmine > spec > feedreader.js.
+ - Or Download the files and run the index.html file in the browser of your choice.
 
 
 ### Resources Used
-
-* [Starter Code from Udacity Front-End Nanodegree] (https://github.com/udacity/frontend-nanodegree-feedreader)
-* [Matthew Cranford's Tutorial Part 1](https://matthewcranford.com/feed-reader-walkthrough-part-1-starter-code/)
-* [Matthew Cranford's Tutorial Part 2](https://matthewcranford.com/feed-reader-walkthrough-part-2-writing-the-first-tests/)
-* [Matthew Cranford's Tutorial Part 3](https://matthewcranford.com/feed-reader-walkthrough-part-3-menu-test-suite/)
-* [Matthew Cranford's Tutorial Part 4](https://matthewcranford.com/feed-reader-walkthrough-part-4-async-tests/)
+* [Starter Code from Udacity Front-End Nanodegree](https://github.com/udacity/frontend-nanodegree-feedreader)
